@@ -1,8 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require ('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require ('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require ('copy-webpack-plugin');
 const TerserPlugin = require ('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 
 
@@ -14,7 +14,7 @@ module.exports = {
             new TerserPlugin({
                 test: /\.js(\?.*)?$/i,
             }),
-            new OptimizeCssAssetsPlugin()
+            new CssMinimizerPlugin()
         ],
     },
     output: {
